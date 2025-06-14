@@ -263,7 +263,7 @@ export default function ProductCard() {
 
           {/* Tabs */}
           <Tabs defaultValue="buy" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 md:grid-cols-6">
+            <TabsList className="_bg-card grid w-full grid-cols-3 md:grid-cols-6">
               <TabsTrigger value="buy" className="text-xs md:text-sm">
                 ГДЕ КУПИТЬ{" "}
                 <Badge variant="secondary" className="ml-1">

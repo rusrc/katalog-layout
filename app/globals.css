@@ -33,13 +33,13 @@
   }
 
   .dark {
-    --background: 20 14.3% 4.1%;
+    --background: 0 0% 9%; /* Основной цвет фона */
     --foreground: 60 9.1% 97.8%;
-    --card: 20 14.3% 4.1%;
+    --card: 0 0% 12%; /* Фон карточек */
     --card-foreground: 60 9.1% 97.8%;
     --popover: 20 14.3% 4.1%;
     --popover-foreground: 60 9.1% 97.8%;
-    --primary: 20.5 90.2% 48.2%;
+    --primary: 20.5 90.2% 48.2%; /* Цвет шрифта оранжевый */
     --primary-foreground: 60 9.1% 97.8%;
     --secondary: 12 6.5% 15.1%;
     --secondary-foreground: 60 9.1% 97.8%;
