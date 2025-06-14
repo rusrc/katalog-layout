@@ -1,24 +1,48 @@
-"use client"
+"use client";
 
-import { AppSidebar } from "@/components/app-sidebar"
-import { ThemeToggle } from "@/components/theme-toggle"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Separator } from "@/components/ui/separator"
-import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Label } from "@/components/ui/label"
-import { Badge } from "@/components/ui/badge"
-import { Heart, ShoppingCart, MapPin, Search, Share2, ChevronRight, Play } from "lucide-react"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Input } from "@/components/ui/input"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
-import { useState } from "react"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+import { AppSidebar } from "@/components/app-sidebar";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import {
+  SidebarInset,
+  SidebarProvider,
+  SidebarTrigger,
+} from "@/components/ui/sidebar";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
+import { Badge } from "@/components/ui/badge";
+import {
+  Heart,
+  ShoppingCart,
+  MapPin,
+  Search,
+  Share2,
+  ChevronRight,
+  Play,
+} from "lucide-react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Input } from "@/components/ui/input";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { useState } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export default function ProductCard() {
-  const [selectedImageIndex, setSelectedImageIndex] = useState(0)
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   const productImages = [
     {
@@ -51,7 +75,7 @@ export default function ProductCard() {
       type: "image",
       thumbnail: "/images/iphone1-100x100.webp",
     },
-  ]
+  ];
 
   const breadcrumbs = [
     { name: "Каталог", href: "#" },
@@ -59,20 +83,20 @@ export default function ProductCard() {
     { name: "Мобильные и аксессуары", href: "#" },
     { name: "Мобильные телефоны", href: "#" },
     { name: "Apple", href: "#" },
-  ]
+  ];
 
   const colorVariants = [
     { name: "Natural Titanium", color: "#C0C0C0", selected: true },
     { name: "Black Titanium", color: "#1a1a1a", selected: false },
     { name: "White Titanium", color: "#F5F5F5", selected: false },
     { name: "Blue Titanium", color: "#4A90E2", selected: false },
-  ]
+  ];
 
   const storageVariants = [
     { size: "256 ГБ", selected: true },
     { size: "512 ГБ", selected: false },
     { size: "1 ТБ", selected: false },
-  ]
+  ];
 
   const stores = [
     {
@@ -137,7 +161,7 @@ export default function ProductCard() {
       logo: "/images/logo6.webp",
       productImage: "/images/iphone1.webp",
     },
-  ]
+  ];
 
   return (
     <SidebarProvider>
@@ -146,8 +170,9 @@ export default function ProductCard() {
         <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
           <SidebarTrigger className="-ml-1" />
           <Separator orientation="vertical" className="mr-2 h-4" />
-          <h1 className="text-xl font-semibold">Marketplace</h1>
-
+          <a href="/showcase">
+            <h1 className="text-xl font-semibold">Marketplace</h1>
+          </a>
           {/* City Selector - Hidden on mobile */}
           <div className="hidden md:flex items-center gap-2 ml-4">
             <MapPin className="h-4 w-4 text-muted-foreground" />
@@ -172,6 +197,9 @@ export default function ProductCard() {
               <Input placeholder="Search products..." className="pl-8 h-8" />
             </div>
           </div>
+
+          {/* Spacer to push buttons to the right */}
+          <div className="flex-1" />
 
           <div className="flex items-center gap-2">
             {/* City Selector for mobile */}
@@ -206,10 +234,15 @@ export default function ProductCard() {
           <nav className="flex items-center space-x-1 text-sm text-muted-foreground">
             {breadcrumbs.map((item, index) => (
               <div key={index} className="flex items-center">
-                <Button variant="link" className="h-auto p-0 text-sm text-muted-foreground hover:text-primary">
+                <Button
+                  variant="link"
+                  className="h-auto p-0 text-sm text-muted-foreground hover:text-primary"
+                >
                   {item.name}
                 </Button>
-                {index < breadcrumbs.length - 1 && <ChevronRight className="h-4 w-4 mx-1" />}
+                {index < breadcrumbs.length - 1 && (
+                  <ChevronRight className="h-4 w-4 mx-1" />
+                )}
               </div>
             ))}
           </nav>
@@ -218,7 +251,8 @@ export default function ProductCard() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-2xl md:text-3xl font-bold text-primary">
-                Цены на Apple iPhone 16 Pro Max <span className="text-muted-foreground text-lg">256 ГБ</span>
+                Цены на Apple iPhone 16 Pro Max{" "}
+                <span className="text-muted-foreground text-lg">256 ГБ</span>
               </h1>
             </div>
             <Button variant="ghost" size="icon">
@@ -274,11 +308,15 @@ export default function ProductCard() {
                             <DialogTrigger asChild>
                               <button className="relative w-full">
                                 <img
-                                  src={productImages[selectedImageIndex].src || "/placeholder.svg"}
+                                  src={
+                                    productImages[selectedImageIndex].src ||
+                                    "/placeholder.svg"
+                                  }
                                   alt="iPhone 16 Pro Max"
                                   className="w-full h-80 object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
                                 />
-                                {productImages[selectedImageIndex].type === "video" && (
+                                {productImages[selectedImageIndex].type ===
+                                  "video" && (
                                   <div className="absolute inset-0 flex items-center justify-center">
                                     <div className="bg-black/30 rounded-full p-3">
                                       <Play className="h-8 w-8 text-white" />
@@ -286,10 +324,16 @@ export default function ProductCard() {
                                   </div>
                                 )}
                                 <div className="absolute bottom-2 left-2 flex gap-2">
-                                  <Badge variant="secondary" className="text-xs">
+                                  <Badge
+                                    variant="secondary"
+                                    className="text-xs"
+                                  >
                                     Видео 12
                                   </Badge>
-                                  <Badge variant="secondary" className="text-xs">
+                                  <Badge
+                                    variant="secondary"
+                                    className="text-xs"
+                                  >
                                     Фото 16
                                   </Badge>
                                 </div>
@@ -298,11 +342,15 @@ export default function ProductCard() {
                             <DialogContent className="max-w-4xl w-full">
                               <div className="relative">
                                 <img
-                                  src={productImages[selectedImageIndex].src || "/placeholder.svg"}
+                                  src={
+                                    productImages[selectedImageIndex].src ||
+                                    "/placeholder.svg"
+                                  }
                                   alt="iPhone 16 Pro Max"
                                   className="w-full h-auto rounded-lg"
                                 />
-                                {productImages[selectedImageIndex].type === "video" && (
+                                {productImages[selectedImageIndex].type ===
+                                  "video" && (
                                   <div className="absolute inset-0 flex items-center justify-center">
                                     <div className="bg-black/30 rounded-full p-3">
                                       <Play className="h-12 w-12 text-white" />
@@ -313,13 +361,19 @@ export default function ProductCard() {
                                   {productImages.map((image, index) => (
                                     <button
                                       key={index}
-                                      onClick={() => setSelectedImageIndex(index)}
+                                      onClick={() =>
+                                        setSelectedImageIndex(index)
+                                      }
                                       className={`w-16 h-16 rounded border-2 overflow-hidden ${
-                                        selectedImageIndex === index ? "border-primary" : "border-border"
+                                        selectedImageIndex === index
+                                          ? "border-primary"
+                                          : "border-border"
                                       }`}
                                     >
                                       <img
-                                        src={image.thumbnail || "/placeholder.svg"}
+                                        src={
+                                          image.thumbnail || "/placeholder.svg"
+                                        }
                                         alt={`Product view ${index + 1}`}
                                         className="w-full h-full object-cover"
                                       />
@@ -346,11 +400,16 @@ export default function ProductCard() {
                         >
                           <CarouselContent>
                             {productImages.map((image, index) => (
-                              <CarouselItem key={index} className="basis-1/5 pl-1">
+                              <CarouselItem
+                                key={index}
+                                className="basis-1/5 pl-1"
+                              >
                                 <button
                                   onClick={() => setSelectedImageIndex(index)}
                                   className={`relative w-full aspect-square rounded border-2 overflow-hidden ${
-                                    selectedImageIndex === index ? "border-primary" : "border-border"
+                                    selectedImageIndex === index
+                                      ? "border-primary"
+                                      : "border-border"
                                   }`}
                                 >
                                   <img
@@ -379,7 +438,9 @@ export default function ProductCard() {
                             <div
                               key={index}
                               className={`w-8 h-8 rounded border-2 cursor-pointer ${
-                                variant.selected ? "border-primary" : "border-border"
+                                variant.selected
+                                  ? "border-primary"
+                                  : "border-border"
                               }`}
                               style={{ backgroundColor: variant.color }}
                             />
@@ -408,19 +469,25 @@ export default function ProductCard() {
                 <div className="lg:col-span-2">
                   <div className="mb-6">
                     <div className="text-2xl md:text-3xl font-bold text-primary mb-4">
-                      от <span className="text-primary">637 200</span> до <span className="text-primary">799 990</span>{" "}
-                      тг.
+                      от <span className="text-primary">637 200</span> до{" "}
+                      <span className="text-primary">799 990</span> тг.
                     </div>
 
                     <p className="text-sm text-muted-foreground mb-4">
-                      Крупнейший из всех существующих «Айфонов» на момент дебюта осенью 2024 года. Размеры OLED-экрана у
-                      модели подросли с 6.7 до 6.9 дюймов, в то же время удалось уменьшить рамки. Панель Super Retina
-                      XDR выводит изображения в максимальном разрешении 2868x1320 пикселей, обладает адаптивной частотой
-                      развёртки до 120 Гц и пиковой яркостью до 2000 нит (в режиме HDR). В дисплее по-прежнему находится
-                      динамический вырез Dynamic Island, выкроенный под нужды объектива 12 МП селфи-камеры и датчики
-                      системы Face ID. Основная камера смартфона содержит трио датчиков изображения: 48 МП ведущий, 48
-                      МП ультраширик и 12 МП телевик с оптическим зумом. Видео на Apple iPhone 16 Pro Max 256GB можно
-                      снимать в 4K при 120 к/с (ProRes или Dolby Vision), а за запись пространственного звука впредь
+                      Крупнейший из всех существующих «Айфонов» на момент дебюта
+                      осенью 2024 года. Размеры OLED-экрана у модели подросли с
+                      6.7 до 6.9 дюймов, в то же время удалось уменьшить рамки.
+                      Панель Super Retina XDR выводит изображения в максимальном
+                      разрешении 2868x1320 пикселей, обладает адаптивной
+                      частотой развёртки до 120 Гц и пиковой яркостью до 2000
+                      нит (в режиме HDR). В дисплее по-прежнему находится
+                      динамический вырез Dynamic Island, выкроенный под нужды
+                      объектива 12 МП селфи-камеры и датчики системы Face ID.
+                      Основная камера смартфона содержит трио датчиков
+                      изображения: 48 МП ведущий, 48 МП ультраширик и 12 МП
+                      телевик с оптическим зумом. Видео на Apple iPhone 16 Pro
+                      Max 256GB можно снимать в 4K при 120 к/с (ProRes или Dolby
+                      Vision), а за запись пространственного звука впредь
                       отвечают четыре...
                     </p>
 
@@ -442,13 +509,18 @@ export default function ProductCard() {
 
               {/* Store Listings Section - Now Below */}
               <div className="space-y-4">
-                <h2 className="text-xl font-semibold mb-4">Предложения магазинов</h2>
+                <h2 className="text-xl font-semibold mb-4">
+                  Предложения магазинов
+                </h2>
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
                   <span className="text-sm text-muted-foreground">
-                    Когда вы совершаете покупку по ссылкам на нашем сайте, мы можем получать партнерскую комиссию.
+                    Когда вы совершаете покупку по ссылкам на нашем сайте, мы
+                    можем получать партнерскую комиссию.
                   </span>
                   <div className="flex items-center gap-2">
-                    <span className="text-sm text-muted-foreground">Сортировать</span>
+                    <span className="text-sm text-muted-foreground">
+                      Сортировать
+                    </span>
                     <Select defaultValue="rating">
                       <SelectTrigger className="w-32 h-8">
                         <SelectValue />
@@ -475,7 +547,9 @@ export default function ProductCard() {
 
                         {/* Product Info */}
                         <div className="flex-1 min-w-0">
-                          <h3 className="font-medium text-sm mb-1 line-clamp-2">{store.name}</h3>
+                          <h3 className="font-medium text-sm mb-1 line-clamp-2">
+                            {store.name}
+                          </h3>
                           <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
                             <span className="text-primary">{store.store}</span>
                             <span>•</span>
@@ -488,14 +562,18 @@ export default function ProductCard() {
                             )}
                           </div>
                           {store.description && (
-                            <p className="text-xs text-muted-foreground line-clamp-2">{store.description}</p>
+                            <p className="text-xs text-muted-foreground line-clamp-2">
+                              {store.description}
+                            </p>
                           )}
                         </div>
 
                         {/* Price and Actions */}
                         <div className="flex flex-col items-end justify-between min-w-[200px]">
                           <div className="text-right mb-2">
-                            <div className="text-xl font-bold text-primary">{store.price} тг.</div>
+                            <div className="text-xl font-bold text-primary">
+                              {store.price} тг.
+                            </div>
                           </div>
                           <div className="flex flex-col items-end gap-2">
                             <Button size="sm" className="w-full min-w-[140px]">
@@ -522,8 +600,12 @@ export default function ProductCard() {
             <TabsContent value="description">
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold mb-4">Описание товара</h3>
-                  <p className="text-muted-foreground">Подробное описание Apple iPhone 16 Pro Max будет здесь...</p>
+                  <h3 className="text-lg font-semibold mb-4">
+                    Описание товара
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Подробное описание Apple iPhone 16 Pro Max будет здесь...
+                  </p>
                 </CardContent>
               </Card>
             </TabsContent>
@@ -531,9 +613,12 @@ export default function ProductCard() {
             <TabsContent value="specs">
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold mb-4">Технические характеристики</h3>
+                  <h3 className="text-lg font-semibold mb-4">
+                    Технические характеристики
+                  </h3>
                   <p className="text-muted-foreground">
-                    Технические характеристики Apple iPhone 16 Pro Max будут здесь...
+                    Технические характеристики Apple iPhone 16 Pro Max будут
+                    здесь...
                   </p>
                 </CardContent>
               </Card>
@@ -543,7 +628,9 @@ export default function ProductCard() {
               <Card>
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold mb-4">Отзывы</h3>
-                  <p className="text-muted-foreground">Отзывы пользователей будут здесь...</p>
+                  <p className="text-muted-foreground">
+                    Отзывы пользователей будут здесь...
+                  </p>
                 </CardContent>
               </Card>
             </TabsContent>
@@ -551,8 +638,12 @@ export default function ProductCard() {
             <TabsContent value="questions">
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold mb-4">Вопросы и ответы</h3>
-                  <p className="text-muted-foreground">Вопросы и ответы будут здесь...</p>
+                  <h3 className="text-lg font-semibold mb-4">
+                    Вопросы и ответы
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Вопросы и ответы будут здесь...
+                  </p>
                 </CardContent>
               </Card>
             </TabsContent>
@@ -561,7 +652,9 @@ export default function ProductCard() {
               <Card>
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold mb-4">Аксессуары</h3>
-                  <p className="text-muted-foreground">Совместимые аксессуары будут здесь...</p>
+                  <p className="text-muted-foreground">
+                    Совместимые аксессуары будут здесь...
+                  </p>
                 </CardContent>
               </Card>
             </TabsContent>
@@ -569,5 +662,5 @@ export default function ProductCard() {
         </div>
       </SidebarInset>
     </SidebarProvider>
-  )
+  );
 }
