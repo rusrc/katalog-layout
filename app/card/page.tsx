@@ -22,34 +22,34 @@ export default function ProductCard() {
 
   const productImages = [
     {
-      src: "/placeholder.svg?height=400&width=300&text=iPhone+16+Pro+Max+Video",
+      src: "/images/iphone2-400x300.webp",
       type: "video",
-      thumbnail: "/placeholder.svg?height=100&width=100&text=Video",
+      thumbnail: "/images/iphone2-100x100.webp",
     },
     {
-      src: "https://placeholder.apptor.studio/400/300/product1.png",
+      src: "/images/iphone1-400x300.webp",
       type: "image",
-      thumbnail: "https://placeholder.apptor.studio/100/100/product1.png",
+      thumbnail: "/images/iphone1-100x100.webp",
     },
     {
-      src: "https://placeholder.apptor.studio/400/300/product2.png",
+      src: "/images/iphone2-400x300.webp",
       type: "image",
-      thumbnail: "https://placeholder.apptor.studio/100/100/product2.png",
+      thumbnail: "/images/iphone2-100x100.webp",
     },
     {
-      src: "https://placeholder.apptor.studio/400/300/product3.png",
+      src: "/images/iphone1-400x300.webp",
       type: "image",
-      thumbnail: "https://placeholder.apptor.studio/100/100/product3.png",
+      thumbnail: "/images/iphone3-100x100.webp",
     },
     {
-      src: "https://placeholder.apptor.studio/400/300/product1.png",
+      src: "/images/iphone2-400x300.webp",
       type: "image",
-      thumbnail: "https://placeholder.apptor.studio/100/100/product1.png",
+      thumbnail: "/images/iphone4-100x100.webp",
     },
     {
-      src: "https://placeholder.apptor.studio/400/300/product2.png",
+      src: "/images/iphone1-400x300.webp",
       type: "image",
-      thumbnail: "https://placeholder.apptor.studio/100/100/product2.png",
+      thumbnail: "/images/iphone1-100x100.webp",
     },
   ]
 
@@ -82,8 +82,8 @@ export default function ProductCard() {
       delivery: "Доставка: из Алматы",
       canComplain: true,
       price: "637 200",
-      logo: "https://placeholder.apptor.studio/80/40/product1.png",
-      productImage: "https://placeholder.apptor.studio/80/60/product2.png",
+      logo: "/images/logo1.webp",
+      productImage: "/images/iphone1.webp",
     },
     {
       id: 2,
@@ -92,8 +92,8 @@ export default function ProductCard() {
       delivery: "Доставка: из Алматы",
       canComplain: true,
       price: "728 127",
-      logo: "https://placeholder.apptor.studio/80/40/product1.png",
-      productImage: "https://placeholder.apptor.studio/80/60/product2.png",
+      logo: "/images/logo2.webp",
+      productImage: "/images/iphone1.webp",
     },
     {
       id: 3,
@@ -104,8 +104,8 @@ export default function ProductCard() {
       price: "789 990",
       description:
         "iPhone 16 Pro Max имеет титановый корпус Grade 5 с новой, изысканной микроструктурной текстурой. Титан имеет одно из самых высоких соотношений прочности к весу среди всех металлов, что делает эти модели невероятно прочными и впечатляюще легкими. Новая технология отображения позволяет направлять данные дисплея под активные пиксели... еще",
-      logo: "https://placeholder.apptor.studio/80/40/product1.png",
-      productImage: "https://placeholder.apptor.studio/80/60/product2.png",
+      logo: "/images/logo3.webp",
+      productImage: "/images/iphone1.webp",
     },
     {
       id: 4,
@@ -114,8 +114,8 @@ export default function ProductCard() {
       delivery: "Доставка: из Алматы",
       canComplain: true,
       price: "699 990",
-      logo: "https://placeholder.apptor.studio/80/40/product1.png",
-      productImage: "https://placeholder.apptor.studio/80/60/product2.png",
+      logo: "/images/logo4.webp",
+      productImage: "/images/iphone1.webp",
     },
     {
       id: 5,
@@ -124,8 +124,8 @@ export default function ProductCard() {
       delivery: "Доставка: из Астаны",
       canComplain: true,
       price: "749 990",
-      logo: "https://placeholder.apptor.studio/80/40/product1.png",
-      productImage: "https://placeholder.apptor.studio/80/60/product2.png",
+      logo: "/images/logo5.webp",
+      productImage: "/images/iphone1.webp",
     },
     {
       id: 6,
@@ -134,8 +134,8 @@ export default function ProductCard() {
       delivery: "Доставка: из Шымкента",
       canComplain: true,
       price: "759 990",
-      logo: "https://placeholder.apptor.studio/80/40/product1.png",
-      productImage: "https://placeholder.apptor.studio/80/60/product2.png",
+      logo: "/images/logo6.webp",
+      productImage: "/images/iphone1.webp",
     },
   ]
 

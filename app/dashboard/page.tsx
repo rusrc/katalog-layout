@@ -1,15 +1,25 @@
-import { AppSidebar } from "@/components/app-sidebar"
-import { ThemeToggle } from "@/components/theme-toggle"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Separator } from "@/components/ui/separator"
-import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Label } from "@/components/ui/label"
-import { Badge } from "@/components/ui/badge"
-import { Heart, ShoppingCart, MapPin, Search } from "lucide-react"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Input } from "@/components/ui/input"
+import { AppSidebar } from "@/components/app-sidebar";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import {
+  SidebarInset,
+  SidebarProvider,
+  SidebarTrigger,
+} from "@/components/ui/sidebar";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
+import { Badge } from "@/components/ui/badge";
+import { Heart, ShoppingCart, MapPin, Search } from "lucide-react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Input } from "@/components/ui/input";
 
 export default function Page() {
   // Sample product data with detailed specifications
@@ -56,10 +66,30 @@ export default function Page() {
       colors: ["black", "gray", "gold", "white"],
       priceRange: "от 638 400 до 789 990 тг.",
       stores: [
-        { name: "Shop.kz", location: "из Астаны", price: "789 990 тг.", color: "black" },
-        { name: "Almajuice.kz", location: "из Алматы", price: "789 990 тг.", color: "orange" },
-        { name: "Gadgetstore.kz", location: "из Алматы", price: "638 400 тг.", color: "orange" },
-        { name: "Shop.kz", location: "из Астаны", price: "789 990 тг.", color: "orange" },
+        {
+          name: "Shop.kz",
+          location: "из Астаны",
+          price: "789 990 тг.",
+          color: "black",
+        },
+        {
+          name: "Almajuice.kz",
+          location: "из Алматы",
+          price: "789 990 тг.",
+          color: "orange",
+        },
+        {
+          name: "Gadgetstore.kz",
+          location: "из Алматы",
+          price: "638 400 тг.",
+          color: "orange",
+        },
+        {
+          name: "Shop.kz",
+          location: "из Астаны",
+          price: "789 990 тг.",
+          color: "orange",
+        },
       ],
     },
     {
@@ -68,7 +98,15 @@ export default function Page() {
       storage: "256 ГБ / 8 ГБ",
       year: "2025 год",
       image: "/placeholder.svg?height=300&width=200",
-      tags: ["Redmi Note", "120 Гц", "NFC", "fast charge", "стерео", "Dolby Atmos", "без 3У"],
+      tags: [
+        "Redmi Note",
+        "120 Гц",
+        "NFC",
+        "fast charge",
+        "стерео",
+        "Dolby Atmos",
+        "без 3У",
+      ],
       specs: {
         screen: '6.67", AMOLED, 2400x1080 (20:9), 395 ppi, 120 Гц',
         camera: "3 модуля, 108 МП, макро",
@@ -83,12 +121,27 @@ export default function Page() {
       colors: ["green", "black", "blue"],
       priceRange: "от 99 990 тг.",
       stores: [
-        { name: "Shop.kz", location: "из Астаны", price: "99 990 тг.", color: "green" },
-        { name: "Shop.kz", location: "из Астаны", price: "99 990 тг.", color: "black" },
-        { name: "Shop.kz", location: "из Астаны", price: "99 990 тг.", color: "blue" },
+        {
+          name: "Shop.kz",
+          location: "из Астаны",
+          price: "99 990 тг.",
+          color: "green",
+        },
+        {
+          name: "Shop.kz",
+          location: "из Астаны",
+          price: "99 990 тг.",
+          color: "black",
+        },
+        {
+          name: "Shop.kz",
+          location: "из Астаны",
+          price: "99 990 тг.",
+          color: "blue",
+        },
       ],
     },
-  ]
+  ];
 
   return (
     <SidebarProvider>
@@ -176,7 +229,10 @@ export default function Page() {
                       </div>
                       <div className="mt-4 flex items-center justify-center lg:justify-start gap-2">
                         <Checkbox id={`compare-${product.id}`} />
-                        <Label htmlFor={`compare-${product.id}`} className="text-sm">
+                        <Label
+                          htmlFor={`compare-${product.id}`}
+                          className="text-sm"
+                        >
                           Сравнить
                         </Label>
                       </div>
@@ -186,13 +242,20 @@ export default function Page() {
                     <div className="flex-1 space-y-4 order-3 lg:order-2">
                       <div>
                         <h3 className="text-xl font-semibold text-primary">
-                          {product.name} <span className="text-muted-foreground">{product.storage}</span>
+                          {product.name}{" "}
+                          <span className="text-muted-foreground">
+                            {product.storage}
+                          </span>
                         </h3>
 
                         {/* Feature Tags */}
                         <div className="flex flex-wrap gap-1 mt-2">
                           {product.tags.map((tag, index) => (
-                            <Badge key={index} variant="secondary" className="font-normal">
+                            <Badge
+                              key={index}
+                              variant="secondary"
+                              className="font-normal"
+                            >
                               {tag}
                             </Badge>
                           ))}
@@ -209,7 +272,7 @@ export default function Page() {
                         </div>
                         <div>
                           <span className="font-medium">Камера:</span>{" "}
-                          <Badge variant="default" className="ml-1 bg-primary/10 text-primary hover:bg-primary/20">
+                          <Badge variant="outline" className="ml-1">
                             {product.specs.camera}
                           </Badge>
                         </div>
@@ -220,24 +283,18 @@ export default function Page() {
                           </Badge>
                         </div>
                         <div className="flex flex-col sm:flex-row sm:gap-4">
-                          <div>
-                            <span className="font-medium">Память:</span>{" "}
-                            <Badge variant="secondary" className="ml-1">
-                              {product.specs.memory}
-                            </Badge>
-                          </div>
-                          <div>
-                            <span className="font-medium">Процессор:</span>{" "}
-                            <Badge variant="secondary" className="ml-1">
-                              {product.specs.processor}
-                            </Badge>
-                          </div>
-                          <div>
-                            <span className="font-medium">ОЗУ:</span>{" "}
-                            <Badge variant="secondary" className="ml-1">
-                              {product.specs.ram}
-                            </Badge>
-                          </div>
+                          <span className="font-medium">Память:</span>{" "}
+                          <Badge variant="outline" className="ml-1">
+                            {product.specs.memory}
+                          </Badge>
+                          <span className="font-medium">Процессор:</span>{" "}
+                          <Badge variant="outline" className="ml-1">
+                            {product.specs.processor}
+                          </Badge>
+                          <span className="font-medium">ОЗУ:</span>{" "}
+                          <Badge variant="outline" className="ml-1">
+                            {product.specs.ram}
+                          </Badge>
                         </div>
                         <div className="flex flex-col sm:flex-row sm:gap-4">
                           <div>
@@ -248,7 +305,9 @@ export default function Page() {
                           </div>
                           <div>
                             <span className="font-medium">Корпус:</span>{" "}
-                            <span className="text-muted-foreground">{product.specs.body}</span>
+                            <span className="text-muted-foreground">
+                              {product.specs.body}
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -293,7 +352,9 @@ export default function Page() {
                           ))}
                         </div>
                         <div className="flex gap-2 sm:ml-auto items-center">
-                          <span className="text-sm text-muted-foreground">Цвет:</span>
+                          <span className="text-sm text-muted-foreground">
+                            Цвет:
+                          </span>
                           {product.colors.map((color, index) => (
                             <div
                               key={index}
@@ -305,16 +366,16 @@ export default function Page() {
                                   color === "black"
                                     ? "black"
                                     : color === "gray"
-                                      ? "#9ca3af"
-                                      : color === "gold"
-                                        ? "#fbbf24"
-                                        : color === "white"
-                                          ? "white"
-                                          : color === "green"
-                                            ? "#10b981"
-                                            : color === "blue"
-                                              ? "#3b82f6"
-                                              : "#d1d5db",
+                                    ? "#9ca3af"
+                                    : color === "gold"
+                                    ? "#fbbf24"
+                                    : color === "white"
+                                    ? "white"
+                                    : color === "green"
+                                    ? "#10b981"
+                                    : color === "blue"
+                                    ? "#3b82f6"
+                                    : "#d1d5db",
                               }}
                             />
                           ))}
@@ -325,12 +386,17 @@ export default function Page() {
                     {/* Right: Price Comparison */}
                     <div className="lg:w-80 w-full space-y-3 order-2 lg:order-3">
                       <div className="text-right">
-                        <div className="text-lg font-semibold text-primary">{product.priceRange}</div>
+                        <div className="text-lg font-semibold text-primary">
+                          {product.priceRange}
+                        </div>
                       </div>
 
                       <div className="space-y-2">
                         {product.stores.map((store, index) => (
-                          <div key={index} className="flex items-center justify-between text-sm">
+                          <div
+                            key={index}
+                            className="flex items-center justify-between text-sm"
+                          >
                             <div className="flex items-center gap-2">
                               <div
                                 className="w-2 h-2 rounded-full"
@@ -339,25 +405,35 @@ export default function Page() {
                                     store.color === "black"
                                       ? "black"
                                       : store.color === "orange"
-                                        ? "hsl(var(--primary))"
-                                        : store.color === "green"
-                                          ? "#10b981"
-                                          : store.color === "blue"
-                                            ? "#3b82f6"
-                                            : "#9ca3af",
+                                      ? "hsl(var(--primary))"
+                                      : store.color === "green"
+                                      ? "#10b981"
+                                      : store.color === "blue"
+                                      ? "#3b82f6"
+                                      : "#9ca3af",
                                 }}
                               />
-                              <Button variant="link" size="sm" className="h-auto p-0">
+                              <Button
+                                variant="link"
+                                size="sm"
+                                className="h-auto p-0"
+                              >
                                 {store.name}
                               </Button>
-                              <span className="text-muted-foreground">({store.location})</span>
+                              <span className="text-muted-foreground">
+                                ({store.location})
+                              </span>
                             </div>
-                            <span className="font-medium text-primary">{store.price}</span>
+                            <span className="font-medium text-primary">
+                              {store.price}
+                            </span>
                           </div>
                         ))}
                       </div>
 
-                      <Button className="w-full">Сравнить цены {product.stores.length} →</Button>
+                      <Button className="w-full">
+                        Сравнить цены {product.stores.length} →
+                      </Button>
                     </div>
                   </div>
                 </CardContent>
@@ -367,5 +443,5 @@ export default function Page() {
         </div>
       </SidebarInset>
     </SidebarProvider>
-  )
+  );
 }
